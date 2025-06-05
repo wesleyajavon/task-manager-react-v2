@@ -44,7 +44,7 @@ router.post(
       const user = new User({ email, password: hashedPassword });
       await user.save();
 
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET!, { expiresIn: '1h' });
+      const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET!, { expiresIn: '1h' });
 
       return res.json({ token, user: { id: user._id, email: user.email } });
     } catch (error) {
