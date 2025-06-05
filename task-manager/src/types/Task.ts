@@ -1,4 +1,5 @@
-// src/types/Task.ts
+import mongoose from "mongoose"
+
 export type TaskStatus = 'To do' | 'In progress' | 'Done';
 
 export interface Task {
@@ -6,4 +7,5 @@ export interface Task {
   title: string;
   description: string;
   status: TaskStatus;
+  userId: mongoose.Types.ObjectId
 }

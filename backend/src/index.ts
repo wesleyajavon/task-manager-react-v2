@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import taskRoutes from './routes/tasks';
 import mongoose from 'mongoose';
 import { Request, Response } from 'express';
+import authRoutes from './routes/auth';
+
 
 dotenv.config();
 
@@ -24,6 +26,7 @@ app.get('/',  (_req: Request, res: Response) => {
     res.send('API is running!')
 });
 app.use('/api/tasks', taskRoutes);
+app.use('/api/auth', authRoutes);
 
 
 const PORT = process.env.PORT || 3001;
