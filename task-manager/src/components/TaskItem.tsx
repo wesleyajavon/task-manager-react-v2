@@ -37,7 +37,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEditTitle, onEditDescriptio
   function getStatusColor(status: TaskStatus) {
     switch (status) {
       case 'To do':
-        return 'bg-blue-100 dark:bg-blue-800';
+        return 'bg-blue-50 dark:bg-blue-900';
       case 'In progress':
         return 'bg-yellow-50 dark:bg-yellow-900';
       case 'Done':
@@ -49,7 +49,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onEditTitle, onEditDescriptio
 
   return (
     <div
-      className={`rounded-xl p-5 mb-4 shadow-md border-l-4 flex justify-between items-start bg-white dark:bg-gray-900 ${getStatusColor(task.status)
+      className={`rounded-xl p-5 mb-4 shadow-md border-l-4 flex justify-between items-start ${getStatusColor(task.status)
         }`}
     >
       {/* Left Side */}
