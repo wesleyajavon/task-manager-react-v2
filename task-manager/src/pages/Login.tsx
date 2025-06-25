@@ -9,17 +9,23 @@ const API_BASE_URL = import.meta.env.VITE_API_URL;
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
+
       const res = await axios.post(`${API_BASE_URL}/api/auth/login`, { email, password });
       login(res.data.token, res.data.user);
       navigate('/tasks');
     } catch (err: any) {
       alert(err.response?.data?.msg || 'Login failed');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -64,17 +70,18 @@ export default function Login() {
         </div>
 
         <button
+          disabled={loading}
           type="submit"
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
         >
-          Login
+          {loading ? "Loading..." : "Login"}
         </button>
         <p className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
-        You don't have an account?{" "}
-        <a href="/register" className="text-indigo-500 hover:underline">
-          Register
-        </a>
-      </p>
+          You don't have an account?{" "}
+          <a href="/register" className="text-indigo-500 hover:underline">
+            Register
+          </a>
+        </p>
       </form>
     </div>
   );
