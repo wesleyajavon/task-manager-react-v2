@@ -1,6 +1,6 @@
-## 📝 Task Manager App (React + TypeScript + Tailwind)
+# 📝 Task Manager App (React + TypeScript + Tailwind)
 
-# Live Demo 👉 https://task-manager-react-v2.vercel.app/
+## Live Demo 👉 https://task-manager-react-v2.vercel.app/
 
 A simple and responsive task manager built with React, TypeScript, and Tailwind CSS. You can add, edit, delete, and filter tasks by status. All task operations are managed via a RESTful API connected to a MongoDB database for reliable data persistence.
 
@@ -23,7 +23,6 @@ A simple and responsive task manager built with React, TypeScript, and Tailwind 
 
 ## 📸 Preview
 
-> _Add a screenshot here after styling is done_
 ![alt text](public/snapshot_1.png)
 ![alt text](public/snapshot_2.png)
 ![alt text](public/snapshot_3.png)
@@ -33,7 +32,7 @@ A simple and responsive task manager built with React, TypeScript, and Tailwind 
 ```
 
 ## 🔧 Tech Stack
-# Frontend
+### Frontend
 
 ⚛️ React (Vite)
 
@@ -41,7 +40,7 @@ A simple and responsive task manager built with React, TypeScript, and Tailwind 
 
 🎨 Tailwind CSS
 
-# Backend
+### Backend
 
 🌐 Express.js
 
@@ -52,6 +51,7 @@ A simple and responsive task manager built with React, TypeScript, and Tailwind 
 
 
 ## 🛠️ Getting Started
+```bash
 
 1. Clone the repo
 git clone https://github.com/wesleyajavon/task-manager-react-v2.git
@@ -67,7 +67,7 @@ npm run dev
 cd backend
 npm install
 npm run dev
-
+```
 
 Open http://localhost:5173 to view it in the browser.
 
